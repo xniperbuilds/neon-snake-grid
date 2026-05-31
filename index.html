@@ -1084,7 +1084,7 @@ async function shareCard(){
       <div style="margin-top:14px;font-size:20px;color:rgba(255,255,255,.65);font-weight:700">"Capture all. Don't die."</div>
       <div style="position:absolute;left:0;right:0;bottom:46px;text-align:center">
         <div style="font-family:Russo One;font-size:26px;letter-spacing:2px"><span style="color:#ff3346">X</span>NIPERBUILDS</div>
-        <div style="font-size:15px;color:rgba(255,255,255,.45);margin-top:6px">@xniperbuilds · tap in & play</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.45);margin-top:6px">xniperbuilds.github.io/neon-snake-grid</div>
       </div>
     </div></div>`;
   document.body.appendChild(wrap);
@@ -1095,7 +1095,7 @@ async function shareCard(){
     const blob=await new Promise(r=>cv.toBlob(r,'image/png'));
     const file=new File([blob],'neon-snake-grid.png',{type:'image/png'});
     if(navigator.canShare&&navigator.canShare({files:[file]})){
-      await navigator.share({files:[file],title:'Neon Snake Grid',text:`I captured ${r.pct}% on Neon Snake Grid! 🐍`});
+      await navigator.share({files:[file],title:'Neon Snake Grid',text:`I captured ${r.pct}% on Neon Snake Grid! 🐍 Play free: https://xniperbuilds.github.io/neon-snake-grid/`,url:'https://xniperbuilds.github.io/neon-snake-grid/'});
     } else {
       const a=document.createElement('a'); a.href=cv.toDataURL('image/png'); a.download='neon-snake-grid.png'; a.click();
     }
